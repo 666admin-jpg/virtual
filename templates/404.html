@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 悲伤的404网页...</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/禁止.jpg') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static',filename='CSS/style.css') }}" > 
+</head>
+<body>
+    <h2>
+        在《{{ user.name }}》中未找到你要查询的功法！
+    </h2>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+        </ul>
+    </nav>
+    <ul class="movie-list">
+        <li>
+            管理员对你投机取巧的行为感到很失望，你走吧！ -
+            <span class="float-right">
+                <a href="{{ url_for('index') }}">回头思过</a>
+            </span>
+        </li>
+    </ul>
+    <img alt="jia" class="jia" src="{{ url_for('static', filename='images/嘉.png') }}">
+    <footer>
+        <small>&copy; 结尾 - {{ date }}</small>
+    </footer>
+</body>
+</html>
+
+
+
+
+

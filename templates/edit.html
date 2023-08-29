@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>正在修改功法： 《{{ name }}》 - 修炼难度：{{ degree }}</h3>
+<form method="POST">
+    功法名称： <input type="text" name="name1" autocomplete="off" required value="{{ movie.name1 }}">
+    修炼难度： <input type="text" name="degree1" autocomplete="off" required value="{{ movie.degree1 }}">
+    <input class="btn" type="submit" name="submit" value="Update">
+</form>
+<h2>
+<span class="float-right">
+    还没有头绪！
+    <a href="{{ url_for('index') }}">暂不修改</a>
+</span>
+</h2>
+
+{% endblock %}

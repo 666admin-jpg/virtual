@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>星辰永不坠落，国术永不落幕 —— 星辰传功阁 - {{ date }}</title> {# 定义网站主名称 #}
+    <link rel="icon" href="{{ url_for('static', filename='images/希儿.png') }}"> {# 这个link语句用于定义网站的显示图标 #}
+    <link rel="stylesheet" href="{{ url_for('static',filename='CSS/style.css') }}" >  {# 引用css #}
+</head>
+<body>
+    {% for message in get_flashed_messages() %}
+        <div class="alert">{{ message }}</div>
+    {% endfor %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h2><img class="avatar" src="{{ url_for('static', filename='images/喵.png') }}">{{ user.name }}</h2> {# 主标题 #}
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+        </ul>
+    </nav>
+
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <small>&copy; 结尾 - {{ date }}</small>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ul class="movie-list">
+    <h2>
+        你正在修炼功法《{{ cmd }}》！
+    </h2>
+<img  class="gu"  src="{{ url_for('static', filename='images/修炼.jpg') }}">
+    <h3>
+    <span class="float-right">
+        太累了！
+    <a href="{{ url_for('index') }}">暂作休整</a>
+    </h3>
+</ul>
+
+
+{% endblock %}

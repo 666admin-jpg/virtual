@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p>· 目前剩余 {{ movies|length }} 本残缺功法： {#（统计正文行数）副标题#}</p>
+    {# length 作用等同于 len #}
+    <ul class="movie-list">
+        {% for movie in movies %}  {# for循环 #}
+
+        <li> {# {{ movie.键1 }} - {{ movie.键2 }} #} {{ movie.title }} -  修炼难度：{{ movie.year }}        
+            <span class="float-right">
+                <form class="inline-form" method="post" action="{{ url_for('delete', movie_id=movie.id) }}">
+                    <input class="btn" type="submit" name="delete" value="删除" onclick="return confirm('是否确定删除?')">
+                </form>
+                <a class="btn" href="{{ url_for('edit', movie_id=movie.id) }}">修改</a>
+                <a class="imdb" href="http://127.0.0.1:5000/{{ movie.title }}" target="_blank" title="Find this movie on IMDb">修炼</a>
+            </span> 
+        </li>
+
+
+        {% endfor %} {# endfor用于结束for循环 #}
+    
+        
+    </ul>
+<h3>请输入你要添加的功法：</h3>
+<form method="POST">
+    功法名称： <input type="text" name="name1" autocomplete="off" required>
+    修炼难度： <input type="text" name="degree1" autocomplete="off" required>
+    <input class="btn" type="submit" value="提交功法">
+</form>
+
+    <h3>
+        <img alt="gu" class="gu"  src="{{ url_for('static', filename='images/咕.png') }}"> {# 指定静态文件路径 #}
+    </h3>
+    {# <img alt="miao" src="{{ url_for('static', filename='images/喵.png') }}"> #}
+
+
+
+
+{% endblock %}
+
+
+
+
+
